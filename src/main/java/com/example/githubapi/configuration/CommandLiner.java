@@ -16,11 +16,13 @@ public class CommandLiner implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		
-		githubProcessor.process(args);
-	
-	}
 
-	
+		try {
+			githubProcessor.process(args);
+		} catch (Exception e) {
+			System.err.println("Beklenmedik bir hata olustu" + e);
+		}
+
+	}
 
 }

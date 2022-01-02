@@ -11,6 +11,9 @@ import com.example.githubapi.model.GithubApiRequest;
 public class ValidationService {
 
 	public GithubApiRequest validateAndReturnValues(String... args) {
+		if(args.length!=3) {
+			exitSystem("Lutfen 3 parameterenin tumunu girdiginizden emin olunuz. Orn: omeruysal 3 3");
+		}
 		for (String arg : args) {
 			if (StringUtils.isEmpty(arg)) {
 				exitSystem("Geçerli bir değer giriniz.");
